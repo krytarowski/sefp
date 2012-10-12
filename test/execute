@@ -1,0 +1,8 @@
+#!/bin/sh
+
+TESTS=`ls bin/test`
+for test in $TESTS
+do
+	./bin/test/${test};
+done;
+
