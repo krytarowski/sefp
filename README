@@ -9,7 +9,10 @@ The library currently supports the precision change, comparison functionalities,
 Usage examples: the library can be used to test if a double or single precision is needed in a given project.
 In 2007 and 2008 it was used to analyze the effects of finite precision in the implementation of active noise and vibration cancellation control systems, the results of the study were published in International Conference Proceedings. The papers can be found in the docs directory.
 
+
+
 Building instructions
 ====
-Once you downloaded the release, type 'make' to build the library and 'make complete' to build the library and to compile and execute test cases.
- 
+
+Once you downloaded the release, type 'make' to build the library and 'make complete' to build the library and to compile and execute test cases. Use 'make clean' to remove all the executable files.
+The library requires you have a C compiler installed. It was tested under Linux and Mac OS. 

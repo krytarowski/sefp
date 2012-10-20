@@ -22,9 +22,11 @@ $(LIBDIR):
 	@mkdir -p $(LIBDIR)
 
 library: $(SRCDIR)/fp.c $(INCDIR)/fp.h
+	@echo "[sefp] Compiling process started"
 	@$(CXX) -c $(CXXFLAGS) -o $(BINDIR)/fp.o $<
 	@ar r $(LIBDIR)/libfp.a $(BINDIR)/fp.o 2>/dev/null
 	@ranlib $(LIBDIR)/libfp.a
+	@echo "[sefp] Library successfully compiled"
 
 $(TESTSINC): $(TESTSC)
 
