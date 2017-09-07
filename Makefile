@@ -12,7 +12,7 @@ TESTSINC=$(basename $(TESTSC))
 
 all: clean $(BINDIR) $(LIBDIR) library
 
-complete: clean all pi $(TESTSINC) testrun
+test: clean all pi $(TESTSINC) testrun
 
 $(BINDIR):
 	@mkdir -p $(BINDIR)
