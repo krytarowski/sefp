@@ -31,14 +31,14 @@ library: $(SRCDIR)/fp.c $(INCDIR)/fp.h
 $(TESTSINC): $(TESTSC)
 
 $(TESTSINC) : test/% : test/%.c
-	@$(CXX) $(LDFLAGS) $(CXXFLAGS) -o $(BINDIR)/$@ $< 
+	@$(CXX) $(CXXFLAGS) $(LDFLAGS) -o $(BINDIR)/$@ $< 
 
 testrun :
 	@echo "Test execution:"
 	@$(TSTDIR)/execute
 
 pi: $(SRCDIR)/pi.c
-	@$(CXX) $(LDFLAGS) $(CXXFLAGS) -o $(BINDIR)/pi $(SRCDIR)/pi.c
+	@$(CXX) $(CXXFLAGS) $(LDFLAGS) -o $(BINDIR)/pi $(SRCDIR)/pi.c
 
 clean:
 	@rm -rf $(BINDIR) $(LIBDIR) gmon.out
