@@ -14,5 +14,5 @@ In 2007 and 2008 it was used to analyze the effects of finite precision in the i
 Building instructions
 ====
 
-Once you downloaded the release, type 'make' to build the library and 'make complete' to build the library and to compile and execute test cases. Use 'make clean' to remove all the executable files.
+Once you downloaded the release, type 'make' to build the library and 'make test' to build the library and to compile and execute test cases. Use 'make clean' to remove all the executable files.
 The library requires you have a C compiler installed. It was tested under Linux and Mac OS. 
