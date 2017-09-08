@@ -1,5 +1,6 @@
 sefp: Software Emulation Floating Point precision
 ====
+[![Build Status](https://travis-ci.org/martinamaggio/sefp.png)](https://travis-ci.org/martinamaggio/sefp)
 
 SEFPp is a C library that allows to emulate floting point various precision.
 
@@ -15,4 +16,4 @@ Building instructions
 ====
 
 Once you downloaded the release, type 'make' to build the library and 'make test' to build the library and to compile and execute test cases. Use 'make clean' to remove all the executable files.
-The library requires you have a C compiler installed. It was tested under Linux and Mac OS. 
+The library requires you have a C compiler installed. It was tested under Linux and Mac OS.
