@@ -1,6 +1,6 @@
 CXX = /usr/bin/gcc
 CXXFLAGS = -pedantic -Iinc -O3 -pg -std=c99
-LDFLAGS = -lm -lfp
+LDFLAGS = -lfp -lm
 
 BINDIR = bin
 LIBDIR = lib
