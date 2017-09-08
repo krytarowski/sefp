@@ -12,7 +12,7 @@ TESTSINC=$(basename $(TESTSC))
 
 all: clean $(BINDIR) $(LIBDIR) library
 
-test: clean all pi $(TESTSINC) testrun
+test: pi $(TESTSINC) testrun
 
 $(BINDIR):
 	@mkdir -p $(BINDIR)
@@ -24,21 +24,21 @@ $(LIBDIR):
 library: $(SRCDIR)/fp.c $(INCDIR)/fp.h
 	@echo "[sefp] Compiling process started"
 	@$(CXX) -c $(CXXFLAGS) -o $(BINDIR)/fp.o $<
-	@ar r $(LIBDIR)/libfp.a $(BINDIR)/fp.o 2>/dev/null
+	@ar cru $(LIBDIR)/libfp.a $(BINDIR)/fp.o 2>/dev/null
 	@ranlib $(LIBDIR)/libfp.a
 	@echo "[sefp] Library successfully compiled"
 
 $(TESTSINC): $(TESTSC)
 
 $(TESTSINC) : test/% : test/%.c
-	@$(CXX) -Llib $(LDFLAGS) $(CXXFLAGS) -o $(BINDIR)/$@ $< 
+	@$(CXX) -Llib $(CXXFLAGS) -o $(BINDIR)/$@ $< $(LDFLAGS)  
 
 testrun :
 	@echo "Test execution:"
 	@$(TSTDIR)/execute
 
 pi: $(SRCDIR)/pi.c
-	@$(CXX) -Llib $(LDFLAGS) $(CXXFLAGS) -o $(BINDIR)/pi $(SRCDIR)/pi.c
+	@$(CXX) -Llib $(CXXFLAGS) -o $(BINDIR)/pi $(SRCDIR)/pi.c $(LDFLAGS) 
 
 clean:
 	@rm -rf $(BINDIR) $(LIBDIR) gmon.out
